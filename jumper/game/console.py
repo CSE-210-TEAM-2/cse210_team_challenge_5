@@ -44,4 +44,4 @@ class Draw:
         cutting one line of the parachuse
         """
 
-
+self.
