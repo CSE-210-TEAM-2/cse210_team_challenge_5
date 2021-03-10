@@ -64,9 +64,6 @@ class Director:
 
         print("Ready to play ")
 
-        pass
-
-
 
        
     
