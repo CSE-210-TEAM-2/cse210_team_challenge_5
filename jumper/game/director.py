@@ -32,10 +32,12 @@ class Director:
         """Gets the inputs at the beginning of each round of play.
             it will prompt to the user for the word to guess and will save it in a varible  
         """
+        guess = self.guess.get_guess()
+        self.console.write(guess)
+        word = self.console.read_word("Enter a word: ")
+        self.guess.move(word)
 
-
-
-    pass
+        
         
         
     # ******************************************** do outputs ********************************************
@@ -45,11 +47,10 @@ class Director:
 
         """
 
+        hint = self.word.get_hint()
+        self.console.write(hint)
+        self.keep_playing = (self.guess.distance[-1] != 0 )
 
-  
-
-
-    pass
 
     # ******************************************** Do updates ********************************************
 
@@ -58,11 +59,11 @@ class Director:
         """Updates the important game information for each round of play. In 
         this case, it will compare the information if the user guess right or not 
         """
+        self.guess.watch(self.word.location)
 
 
         print('Ready to play')
 
-    
 
 
        
