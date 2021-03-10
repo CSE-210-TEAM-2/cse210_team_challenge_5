@@ -59,10 +59,8 @@ class Director:
         """Updates the important game information for each round of play. In 
         this case, it will compare the information if the user guess right or not 
         """
-        self.guess.watch(self.word.location)
 
-
-        print('Ready to play')
+        pass
 
 
 
