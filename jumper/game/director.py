@@ -49,7 +49,7 @@ class Director:
 
         hint = self.word.get_hint()
         self.console.write(hint)
-        self.keep_playing = (self.guess.distance[-1] != 0 )
+        self.keep_playing = (self.guess.distance[-1] != self.word )
 
 
     # ******************************************** Do updates ********************************************
@@ -59,6 +59,10 @@ class Director:
         """Updates the important game information for each round of play. In 
         this case, it will compare the information if the user guess right or not 
         """
+
+        self.word(self.guess)
+
+        print("Ready to play ")
 
         pass
 
