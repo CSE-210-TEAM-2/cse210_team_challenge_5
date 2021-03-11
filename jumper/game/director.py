@@ -1,6 +1,6 @@
 from game.guess import Guess
 from game.word import Word
-from game.console import Draw
+from game.console import Console
 
 class Director:
 
@@ -11,19 +11,21 @@ class Director:
 
         self.keep_playing = True
         self.guess = Guess()
-        self.draw = Draw()
+        self.console = Console()
         self.word = Word()
-
+        #  This will draw the parachuse just one time
+        self.tries = 0
+        self.user_letter = ""
 
     # ******************************************** Start Game ********************************************
     def start_game(self):
         """Starts the game loop to control the sequence of play.
 
-
         """
+        print("\n")
         while self.keep_playing:
-            self.get_inputs()
             self.do_outputs()
+            self.get_inputs()
             self.do_updates()
            
 
@@ -32,18 +34,22 @@ class Director:
         """Gets the inputs at the beginning of each round of play.
             it will prompt to the user for the word to guess and will save it in a varible  
         """
-        guess = self.guess.get_guess()
-        self.console.write(guess)
-        word = self.console.read_word("Enter a word: ")
-        self.guess.move(word)  
+
+        self.user_letter = ""
+        self.user_letter = input ("Guess a letter from [a-z] : ")
+
+
         
     # ******************************************** do outputs ********************************************
     def do_outputs(self):
         """Outputs the important game information for each round of play. It will draw the paracuse 
-        and the list of letter including if he had guess any or not.\
+        and the list of letter including if he had guess any or not.
         """
 
-        self.draw.parachuse_position()
+        print("   " + self.guess.user_progress())
+        print("   " + self.guess.mysterious_word())
+        print(self.console.parachuse_position(self.tries))
+        
 
 
     # ******************************************** Do updates ********************************************
@@ -53,10 +59,23 @@ class Director:
         """Updates the important game information for each round of play. In 
         this case, it will compare the information if the user guess right or not 
         """
+        
 
-        self.word(self.guess)
+        self.guess.compute_guess(self.user_letter)
+        self.keep_playing = self.guess.can_play()
+        self.tries = self.guess.number_of_tries()
+        
+        if self.tries ==  4:
+            print("Sorry Buddy you just killed the jumper")
+            print(self.console.parachuse_position(4))
+            self.keep_playing = False
 
-        print("Ready to play ")
+  
+
+
+
+
+
 
 
        
