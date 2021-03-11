@@ -23,16 +23,7 @@ class Word:
         """"
         This will have the list of a lot of word that the game randomnly will select and save in the
         word attribute it will not return any value just will contain the list
-<<<<<<< HEAD
-
-        """"
-        word = ["apple", "banana","cherry","mango", "orange","dog","goat", "pop","mouse","zebra","lion","beer","water", "love"  "hat","lamp", "book","umbrella", "cake", "bottle"]
-
         """
-
-=======
-        """
->>>>>>> b89f04fdda94bac5fde408d0317ae125a5a4476e
 
         self.list_words = ["apple", "banana","cherry","mango", "orange","dog","goat", "pop","mouse","zebra","lion","beer","water", "love"  "hat","lamp", "book","umbrella", "cake", "bottle"]
 
@@ -56,14 +47,8 @@ class Word:
         Get Word is the only methond that will return a value and is going to be the word that 
         randomly was chose and assign to the attribute word
         """
-<<<<<<< HEAD
-        return self.word
-
-=======
         
->>>>>>> b89f04fdda94bac5fde408d0317ae125a5a4476e
-    pass
-
+        return self.word
 
 
 
