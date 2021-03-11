@@ -32,12 +32,10 @@ class Director:
         """Gets the inputs at the beginning of each round of play.
             it will prompt to the user for the word to guess and will save it in a varible  
         """
-
-
-
-
-    pass
-        
+        guess = self.guess.get_guess()
+        self.console.write(guess)
+        word = self.console.read_word("Enter a word: ")
+        self.guess.move(word)  
         
     # ******************************************** do outputs ********************************************
     def do_outputs(self):
@@ -45,12 +43,8 @@ class Director:
         and the list of letter including if he had guess any or not.\
         """
 
-
         self.draw.parachuse_position()
 
-
-
-    pass
 
     # ******************************************** Do updates ********************************************
 
@@ -60,10 +54,9 @@ class Director:
         this case, it will compare the information if the user guess right or not 
         """
 
+        self.word(self.guess)
 
-        print('Ready to play')
-
-    
+        print("Ready to play ")
 
 
        
