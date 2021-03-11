@@ -47,7 +47,7 @@ class Director:
         """
 
         print("   " + self.guess.user_progress())
-        print("   " + self.guess.mysterious_word())
+        # print("   " + self.guess.mysterious_word())
         print(self.console.parachuse_position(self.tries))
         
 
@@ -68,6 +68,7 @@ class Director:
         if self.tries ==  4:
             print("Sorry Buddy you just killed the jumper")
             print(self.console.parachuse_position(4))
+            print("The word was ", self.guess.mysterious_word(), " Good luck next time \n")
             self.keep_playing = False
 
   
