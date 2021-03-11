@@ -15,7 +15,7 @@ class Guess:
         """
         self.word = Word()
         self.random_word = []
-        self.user_word = ""
+        self.user_word = 
 
     # ********************************** GUESS WORD ***********************************
     def guess_word(self):
@@ -35,6 +35,17 @@ class Guess:
         """
 
         self.random_word = self.word.get_word()
+
+    # ********************************** USER PROGRESS ***********************************
+
+    def user_progress(self):
+        """
+        This Method will return the progress that the user have made so far
+        """
+
+    pass
+
+    
 
 
 

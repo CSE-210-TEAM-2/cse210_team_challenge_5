@@ -27,7 +27,6 @@ class Word:
 
         self.list_words = ["apple", "banana","cherry","mango", "orange","dog","goat", "pop","mouse","zebra","lion","beer","water", "love"  "hat","lamp", "book","umbrella", "cake", "bottle"]
 
-
     # ********************************** WILL ASSIGN A WORD  ***********************************
 
     def assign_word(self):
@@ -35,9 +34,10 @@ class Word:
         """
         This Method will take our attribute word and will assign a random word from our list of words
         """
-        self.word = self.list_words.random()
 
-        #return self.assign
+        # This will select ramdonly a word from the list of words and will assign it the attribute word
+        self.word = random.sample(self.list_words,1)
+
     pass
 
     # ********************************** GET WORD ***********************************

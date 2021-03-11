@@ -35,18 +35,19 @@ class Director:
 
 
 
+
     pass
         
         
     # ******************************************** do outputs ********************************************
     def do_outputs(self):
         """Outputs the important game information for each round of play. It will draw the paracuse 
-        and the list of letter including if he had guess any or not.
-
+        and the list of letter including if he had guess any or not.\
         """
 
 
-  
+        self.draw.parachuse_position()
+
 
 
     pass
